@@ -25,12 +25,15 @@ function randomNumber() {
 
 function playRound(playerSelection, computerChoice) {
     if (playerSelection === computerChoice) {
+        console.log("tie");
         return "tie";
     } else if (playerSelection === "rock" && computerChoice === "scissor" || playerSelection === "paper" && computerChoice === "rock" || playerSelection === "scissor" && computerChoice === "paper") {
         playerWins++;
+        console.log("player");
         return "player";
     } else if (playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissor" || playerSelection === "scissor" && computerChoice === "rock") {
         computerWins++;
+        console.log(computer);
         return "computer";
     }
 }
