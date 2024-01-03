@@ -15,7 +15,6 @@ function getComputerChoice() {
     } else if (random_number === 2) {
         computerChoice = "rock";
     }
-
     return computerChoice;
 }
 
@@ -23,3 +22,21 @@ function randomNumber() {
     return Math.floor(Math.random() * 3); //randomly return 0, 1, 2
 }
 
+
+function playRound(playerSelection, computerChoice) {
+    if (playerSelection === computerChoice) {
+        return "tie";
+    } else if (playerSelection === "rock" && computerChoice === "scissor" || playerSelection === "paper" && computerChoice === "rock" || playerSelection === "scissor" && computerChoice === "paper") {
+        return "player";
+    } else if (playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissor" || playerSelection === "scissor" && computerChoice === "rock") {
+        return "computer";
+    }
+}
+
+
+function test() {
+    let playerSelection = prompt("What is your selection?");
+    console.log(playRound(playerSelection, getComputerChoice()));
+}
+
+test()
