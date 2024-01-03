@@ -1,4 +1,6 @@
-
+let winner = "";
+let playerWins = 0;
+let computerWins = 0;
 
 function getComputerChoice() {
     let random_number = randomNumber();
@@ -14,9 +16,3 @@ function getComputerChoice() {
 
     return computerChoice;
 }
-
-function randomNumber () {
-    return Math.floor(Math.random() * 3) + 1;
-}
-
-console.log(getComputerChoice())
