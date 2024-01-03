@@ -1,6 +1,7 @@
 let winner = "";
 let playerWins = 0;
 let computerWins = 0;
+let playerChoice = "";
 
 
 //return a string that is the computers choice
@@ -25,23 +26,37 @@ function randomNumber() {
 
 function playRound(playerSelection, computerChoice) {
     if (playerSelection === computerChoice) {
-        console.log("tie");
         return "tie";
     } else if (playerSelection === "rock" && computerChoice === "scissor" || playerSelection === "paper" && computerChoice === "rock" || playerSelection === "scissor" && computerChoice === "paper") {
         playerWins++;
-        console.log("player");
         return "player";
     } else if (playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissor" || playerSelection === "scissor" && computerChoice === "rock") {
         computerWins++;
-        console.log(computer);
         return "computer";
     }
 }
 
 
-function test() {
-    let playerSelection = prompt("What is your selection?");
-    console.log(playRound(playerSelection, getComputerChoice()));
+
+function game() { 
+    while (isGameOver() === false) {
+        playerChoice = prompt("What is your selection?")
+        playRound(playerChoice, getComputerChoice());
+        if (playerWins > computerWins) {
+            console.log("Player is winning by " + (playerWins-computerWins) + " wins")
+        } else if (computerWins > playerWins) {
+            console.log("Computer is winning by " + (computerWins-playerWins) + " wins")
+        } else {
+            console.log("The game is tied with " + playerWins)
+        }
+    }   
+    
+    
 }
 
-test()
+function isGameOver() {
+    return computerWins === 5 || playerWins === 5;
+}
+
+game()
+
