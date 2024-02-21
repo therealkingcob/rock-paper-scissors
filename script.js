@@ -26,34 +26,30 @@ function randomNumber() {
 
 function playRound(playerSelection, computerChoice) {
     if (playerSelection === computerChoice) {
-        return "tie";
+        game()
     } else if (playerSelection === "rock" && computerChoice === "scissor" || playerSelection === "paper" && computerChoice === "rock" || playerSelection === "scissor" && computerChoice === "paper") {
         playerWins++;
-        return "player";
+        game()
     } else if (playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissor" || playerSelection === "scissor" && computerChoice === "rock") {
         computerWins++;
-        return "computer";
+        game()
     }
 }
 
 
 
 function game() { 
-        for (i=0; i < 5; i++) {
-        playerChoice = prompt("What is your selection?")
-        playRound(playerChoice, getComputerChoice());
         if (playerWins > computerWins) {
-            console.log("Player is winning by " + (playerWins-computerWins) + " wins")
+            console.log("Player is winning by " + (playerWins-computerWins) + " wins" + ". Player has " + (playerWins))
         } else if (computerWins > playerWins) {
-            console.log("Computer is winning by " + (computerWins-playerWins) + " wins")
+            console.log("Computer is winning by " + (computerWins-playerWins) + " wins" + ". Computer has " + (computerWins))
         } else {
             console.log("The game is tied with " + playerWins)
-        }
         }
     
 }
 
 
 
-game()
+
 
