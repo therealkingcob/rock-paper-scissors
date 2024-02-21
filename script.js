@@ -39,7 +39,7 @@ function playRound(playerSelection, computerChoice) {
 
 
 function game() { 
-    while (isGameOver() === false) {
+        for (i=0; i < 5; i++) {
         playerChoice = prompt("What is your selection?")
         playRound(playerChoice, getComputerChoice());
         if (playerWins > computerWins) {
@@ -49,14 +49,11 @@ function game() {
         } else {
             console.log("The game is tied with " + playerWins)
         }
-    }   
-    
+        }
     
 }
 
-function isGameOver() {
-    return computerWins === 5 || playerWins === 5;
-}
+
 
 game()
 
