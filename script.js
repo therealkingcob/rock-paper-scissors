@@ -2,6 +2,7 @@ let winner = "";
 let playerWins = 0;
 let computerWins = 0;
 let playerChoice = "";
+const result = document.querySelector('#result');
 
 
 //return a string that is the computers choice
@@ -40,11 +41,11 @@ function playRound(playerSelection, computerChoice) {
 
 function game() { 
         if (playerWins > computerWins) {
-            console.log("Player is winning by " + (playerWins-computerWins) + " wins" + ". Player has " + (playerWins))
+            result.innerHTML = "Player is winning by " + (playerWins-computerWins) + " wins" + ". Player has " + (playerWins);
         } else if (computerWins > playerWins) {
-            console.log("Computer is winning by " + (computerWins-playerWins) + " wins" + ". Computer has " + (computerWins))
+            result.innerHtml = "Computer is winning by " + (computerWins-playerWins) + " wins" + ". Computer has " + (computerWins)
         } else {
-            console.log("The game is tied with " + playerWins)
+            result.innerHTML = "The game is tied with " + playerWins
         }
     
 }
